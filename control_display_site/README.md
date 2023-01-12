@@ -5,7 +5,7 @@
   echo "something" > data
   echo "DATA=data" > .env
   npm run dev
-```
+  ```
 - Production (docker)
   ```bash
   docker build . -t school-demo
