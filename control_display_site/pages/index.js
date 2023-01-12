@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -10,18 +10,23 @@ import Typography from '@mui/material/Typography';
 
 export default function Home() {
 
-  const [word,setWord] = useState("");
+  const [word, setWord] = useState("");
+  const [response, setResponse] = useState("");
 
   function submit() {
+    if (word === "") {
+      setResponse("Please enter a word")
+      return
+    }
     fetch("http://localhost:3000/api/word", {
       method: 'POST',
       body: word
     })
       .then(res => {
-        console.log('Response: ', res)
+        setResponse("Success")
       })
       .catch(err => {
-        alert("Failure")
+        setResponse("Fail")
       })
   }
   return (
@@ -31,18 +36,21 @@ export default function Home() {
         <meta name="description" content="Arduino demonstration for school" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-    <main>
-        <Container maxWidth="sm" sx={{marginTop: '5vw' }}>
-          <Typography variant="h3" sx={{marginBottom: '10vw' }}>
+      <main>
+        <Container maxWidth="sm" sx={{ marginTop: '5vw' }}>
+          <Typography variant="h3" sx={{ marginBottom: '10vw' }}>
             LED School Demo
           </Typography>
           <TextField fullWidth id="standard-basic" label="Word"
-                     variant="filled" color='success' inputProps={{ maxLength: 12 }}
-                     onChange={(newValue) => setWord(newValue.target.value)} />
+            variant="filled" color='success' inputProps={{ maxLength: 12 }}
+            onChange={(newValue) => setWord(newValue.target.value)} />
 
           <Box>
-            <Button variant="contained" sx={{marginTop: '5vw' }} onClick={() => submit()}>Submit</Button>
+            <Button variant="contained" sx={{ marginTop: '5vw' }} onClick={() => submit()}>Submit</Button>
           </Box>
+          <Typography variant="p" sx={{ marginTop: '5vw' }}>
+            {response}
+          </Typography>
         </Container>
       </main>
     </>
