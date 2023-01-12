@@ -1,0 +1,14 @@
+\frametitle{Graph of Information}
+  \bigskip \centering
+
+    \begin{tikzpicture}
+  \matrix [column sep=20mm, row sep=4mm] {
+    &  \node (a) [draw, shape=circle] {Amazon}; & \\
+    \node (c) [draw, shape=circle] {Your device}; & &
+    \node (e) [draw, shape=circle] {My computer}; \\
+    & & \node (i) [draw, shape=circle] {LED display}; \\
+  };
+    \draw[->, very thick] (c) -- (a);
+    \draw[->, very thick] (a) -- (e);
+    \draw[->, very thick] (e) -- (i);
+  \end{tikzpicture}
