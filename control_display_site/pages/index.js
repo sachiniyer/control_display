@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -18,7 +18,7 @@ export default function Home() {
       setResponse("Please enter a word")
       return
     }
-    fetch("http://localhost:3000/api/word", {
+    fetch(`/api/word`, {
       method: 'POST',
       body: word
     })
