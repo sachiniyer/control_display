@@ -3,11 +3,3 @@ This is a project created for the Foster Laurie School. This repository has the 
 
 You can use the website to display text on the LED Matrix in it's full form. 
 
-# Build Instructions
-- LED Matrid
-` pio run -e metro --target upload`
-- Host script
-` python script.py`
-- LED Matrid
- `npm run start` for both front and back
-
