@@ -1,0 +1,9 @@
+.pdf-view-restore
+*.out
+*.log
+*.aux
+*.dvi
+indent.log
+.auctex-auto
+node-modules
+.env
