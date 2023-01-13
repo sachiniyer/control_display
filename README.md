@@ -3,3 +3,5 @@ This is a project created for the Foster Laurie School. This repository has the 
 
 You can use the website to display text on the LED Matrix in it's full form. 
 
+# My deployment
+I have a deployment sitting at [https://school-demo.sachiniyer.com](https://school-demo.sachiniyer.com)

@@ -17,7 +17,7 @@ def sendData(data):
 
 
 while True:
-    x = requests.get('http://localhost:3000/api/word')
+    x = requests.get('https://school-demo.sachiniyer.com/api/word')
     x = x.text
     if x != val:
         val = x
