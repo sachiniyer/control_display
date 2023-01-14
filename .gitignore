@@ -163,4 +163,6 @@ yarn-error.log*
 *.out
 *.snm
 *.vrb
+*.aux
+*.toc
 .auctex-auto
