@@ -156,3 +156,11 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# pdflatex stuff
+*.log
+*.nav
+*.out
+*.snm
+*.vrb
+.auctex-auto
