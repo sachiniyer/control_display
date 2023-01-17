@@ -1,0 +1,10 @@
+[Unit]
+Description=Running the control display LED
+After=multi-user.target
+
+[Service]
+ExecStart=/home/node/bin/script.py
+Type=simple
+
+[Install]
+WantedBy=multi-user.target

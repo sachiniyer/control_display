@@ -166,3 +166,5 @@ yarn-error.log*
 *.aux
 *.toc
 .auctex-auto
+
+.pio
