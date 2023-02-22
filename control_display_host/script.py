@@ -2,7 +2,7 @@ import serial
 import time
 import requests
 
-ser = serial.Serial("/dev/ttyUSB0", 9600, timeout = 1)
+ser = serial.Serial("/dev/ttyUSB0", 9600, timeout=1)
 time.sleep(2)
 
 val = ""
@@ -17,10 +17,14 @@ def sendData(data):
 
 
 while True:
-    x = requests.get('https://school-demo.sachiniyer.com/api/word')
-    x = x.text
-    if x != val:
-        val = x
-        sendData(val)
-        print(val)
-    time.sleep(5)
+    try:
+        x = requests.get('https://school-demo.sachiniyer.com/api/word')
+        x = x.text
+        if x != val:
+            val = x
+            sendData(val)
+            print(val)
+        time.sleep(5)
+    except Exception as e:
+        print(e)
+        time.sleep(5)
